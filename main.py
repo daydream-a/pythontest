@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # 读取数据
     datatxt = pd.read_excel("2020-2021茂名（含自媒体）.xlsx", sheet_name=4)
     # 数据整合
-    dataset = datatxt[:10]
+    dataset = datatxt[:]
     dataset["text"] = datatxt["公众号标题"] + '\n' + dataset["正文"]
     dataset = pd.concat([dataset["文章ID"], dataset["text"]], axis=1)
     # 清除文章特殊字符
